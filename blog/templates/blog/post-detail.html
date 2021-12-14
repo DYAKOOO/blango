@@ -5,6 +5,7 @@
 {% row %}
     <div class="col">
         {% include "blog/post-byline.html" %}
+      
     </div>
 {% endrow %}
 {% row %}
@@ -12,4 +13,11 @@
         {{ post.content|safe }}
     </div>
 {% endrow %}
+{% row %}
+    <div class="col">
+      {% recent_posts post %}
+    </div>
+{% endrow %}
 {% endblock %}
+
+
