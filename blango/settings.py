@@ -68,9 +68,16 @@ class Dev(Configuration):
       "allauth.account",
       "allauth.socialaccount",
       "allauth.socialaccount.providers.google",
-      "rest_framework"
+      "rest_framework",
+      "rest_framework.authtoken",
   ]
-
+  REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.BasicAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.TokenAuthentication",
+    ]
+  } 
   MIDDLEWARE = [
       "debug_toolbar.middleware.DebugToolbarMiddleware",
       'django.middleware.security.SecurityMiddleware',
