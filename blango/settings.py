@@ -76,7 +76,11 @@ class Dev(Configuration):
         "rest_framework.authentication.BasicAuthentication",
         "rest_framework.authentication.SessionAuthentication",
         "rest_framework.authentication.TokenAuthentication",
-    ]
+        "rest_framework.permissions.IsAuthenticated",
+    ],
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAuthenticatedOrReadOnly"
+    ],
   } 
   MIDDLEWARE = [
       "debug_toolbar.middleware.DebugToolbarMiddleware",
