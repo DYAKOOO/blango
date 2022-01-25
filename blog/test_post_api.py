@@ -45,9 +45,10 @@ class PostApiTestCase(TestCase):
         self.client = APIClient()
         token = Token.objects.create(user=self.u1)
         self.client.credentials(HTTP_AUTHORIZATION="Token " + token.key)
+        
       def test_post_list(self):
         resp = self.client.get("/api/v1/posts/")
-        data = resp.json()
+        data = resp.json()["results"]
         self.assertEqual(len(data), 2)
 
         for post_dict in data:
