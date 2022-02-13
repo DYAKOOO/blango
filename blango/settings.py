@@ -50,6 +50,8 @@ class Dev(Configuration):
   ACCOUNT_EMAIL_REQUIRED = True
   ACCOUNT_USERNAME_REQUIRED = False
   ACCOUNT_AUTHENTICATION_METHOD = "email"
+  MEDIA_ROOT = BASE_DIR / "media"
+  MEDIA_URL = "/media/"
   # Application definition
 
   INSTALLED_APPS = [
@@ -73,6 +75,7 @@ class Dev(Configuration):
       "rest_framework.authtoken",
       "drf_yasg",
       "django_filters",
+      "versatileimagefield",
   ]
   SWAGGER_SETTINGS = {
       "SECURITY_DEFINITIONS": {

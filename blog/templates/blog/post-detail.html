@@ -7,12 +7,18 @@
         {% include "blog/post-byline.html" %}
     </div>
 {% endrow %}
+{% if post.hero_image %}
+    {% row %}
+        {% col %}
+            <img class="img-fluid" src="{{ post.hero_image.url }}">
+        {% endcol %}
+    {% endrow %}
+{% endif %}
 {% row %}
     <div class="col">
         {{ post.content|safe }}
     </div>
 {% endrow %}
-
 {% if post.author.profile %}
     {% row %}
         {% col %}
